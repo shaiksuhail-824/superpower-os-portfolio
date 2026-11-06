@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Suhail Shaik</title>
+  <meta name="description" content="Professional resume of Suhail Shaik, Computer Science undergraduate focused on Machine Learning, MLOps, and Cloud Computing.">
+  <meta name="author" content="Suhail Shaik">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Resume | Suhail Shaik">
+  <meta property="og:description" content="Professional resume of Suhail Shaik — Machine Learning, MLOps, AWS.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23060913'/%3E%3Crect x='1' y='1' width='30' height='30' rx='5' fill='none' stroke='%2338bdf8' stroke-opacity='0.4' stroke-width='1.5'/%3E%3Cpath d='M8 11h7a4 4 0 0 1 0 8H8v4' fill='none' stroke='%2300f2fe' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='21' cy='19' r='2.5' fill='%238b5cf6'/%3E%3Cpath d='M21 10v4' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      background-color: #ffffff !important;
+      color: #111827 !important;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-code {
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .container {
+      width: 100%;
+      max-width: 64rem; /* 1024px */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    /* Site Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      height: 3.75rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      text-decoration: none;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #111827;
+    }
+    .brand-logo:hover {
+      color: #0284c7;
+    }
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.875rem;
+      height: 1.875rem;
+      background-color: #0b0f19;
+      color: #00f2fe;
+      border-radius: 0.375rem;
+      border: 1px solid #1e293b;
+    }
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .nav-link {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #4b5563;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      position: relative;
+      padding: 0.375rem 0;
+      transition: color 0.15s ease;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    .nav-link:hover {
+      color: #111827;
+    }
+    .nav-link.active {
+      color: #111827;
+      font-weight: 700;
+    }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #111827;
+      border-radius: 1px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.375rem;
+      padding: 0.375rem;
+      color: #111827;
+      cursor: pointer;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+    }
+    .resume-view-top {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 640px) {
+      .resume-view-top {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .resume-page-heading {
+      font-size: 1.875rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #111827;
+    }
+    .resume-download-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.625rem 1.125rem;
+      border-radius: 0.5rem;
+      background-color: #111827;
+      color: #ffffff;
+      text-decoration: none;
+      border: 1px solid #111827;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.15s ease, transform 0.1s ease;
+      cursor: pointer;
+    }
+    .resume-download-cta:hover {
+      background-color: #1f2937;
+      transform: translateY(-1px);
+    }
+
+    /* Document Wrapper */
+    .resume-document-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .pdf-page-container {
+      position: relative;
+      width: 100%;
+      max-width: 52rem; /* 832px */
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.375rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      user-select: text;
+      -webkit-user-select: text;
+    }
+    .pdf-page-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      pointer-events: none;
+    }
+
+    /* Selectable Text & Interactive Links Layer */
+    .pdf-text-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .text-overlay-word {
+      position: absolute;
+      color: transparent;
+      cursor: text;
+      user-select: text;
+      -webkit-user-select: text;
+      line-height: 1;
+      transform-origin: 0% 0%;
+    }
+    .text-overlay-word::selection {
+      background-color: rgba(37, 99, 235, 0.25);
+      color: transparent;
+    }
+    .text-overlay-link {
+      position: absolute;
+      color: transparent;
+      cursor: pointer;
+      z-index: 3;
+    }
+    .text-overlay-link:hover {
+      background-color: rgba(37, 99, 235, 0.15);
+      border-radius: 2px;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid #e5e7eb;
+      background-color: #ffffff;
+      padding: 2rem 0;
+      color: #6b7280;
+      font-size: 0.8125rem;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+      }
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .footer-links a {
+      color: #4b5563;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: #111827;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 860px) {
+      .nav-menu {
+        display: none;
+      }
+      .nav-menu.open {
+        display: block;
+        position: absolute;
+        top: 3.75rem;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+      .nav-menu.open .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.875rem;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header matching previous portfolio layout & Superpower OS identity -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Logo / Name -->
+      <a href="index.html" class="brand-logo" aria-label="Suhail Shaik - Return to home">
+        <div class="brand-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+        </div>
+        <span>SUHAIL SHAIK</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="index.html#learning-tools" class="nav-link">Learning & Tools</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="resume.html" class="nav-link active" aria-current="page">Resume</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button type="button" class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Container with White / Light Background -->
+  <main id="main-content" class="container main-content">
+
+    <!-- Resume Page Top Bar -->
+    <div class="resume-view-top">
+      <h1 class="resume-page-heading">Resume</h1>
+      <div class="resume-top-actions">
+        <a href="assets/resume.pdf" download="Shaik_Suhail_Resume.pdf" class="resume-download-cta">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Download resume PDF</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Actual Resume PDF Document Presentation -->
+    <div class="resume-document-wrapper" id="resume-document" aria-label="Suhail Shaik Professional Resume Document">
+      <div class="pdf-page-container" id="pdf-page-1" style="aspect-ratio: 612 / 792;">
+        <!-- Visual Vector Render of actual resume.pdf -->
+        <img src="assets/resume-page-1.svg" class="pdf-page-image" alt="Suhail Shaik Resume Document Page 1" />
+
+        <!-- Selectable Text & Interactive Links Layer -->
+        <div class="pdf-text-layer" aria-label="Selectable resume text">
+<span class="text-overlay-word" style="left:40.358%;top:2.765%;width:8.391%;height:2.117%;">SHAIK</span>
+<span class="text-overlay-word" style="left:49.568%;top:2.765%;width:10.073%;height:2.117%;">SUHAIL</span>
+<span class="text-overlay-word" style="left:16.139%;top:5.520%;width:6.073%;height:1.065%;">Computer</span>
+<span class="text-overlay-word" style="left:22.619%;top:5.520%;width:4.419%;height:1.065%;">Science</span>
+<span class="text-overlay-word" style="left:27.445%;top:5.520%;width:4.775%;height:1.065%;">Student</span>
+<span class="text-overlay-word" style="left:32.627%;top:5.520%;width:0.733%;height:1.065%;">|</span>
+<span class="text-overlay-word" style="left:33.767%;top:5.520%;width:5.129%;height:1.065%;">Aspiring</span>
+<span class="text-overlay-word" style="left:39.303%;top:5.520%;width:6.958%;height:1.065%;">ML/MLOps</span>
+<span class="text-overlay-word" style="left:46.668%;top:5.520%;width:5.380%;height:1.065%;">Engineer</span>
+<span class="text-overlay-word" style="left:52.456%;top:5.520%;width:0.733%;height:1.065%;">|</span>
+<span class="text-overlay-word" style="left:53.595%;top:5.520%;width:2.929%;height:1.065%;">AWS</span>
+<span class="text-overlay-word" style="left:56.931%;top:5.520%;width:1.031%;height:1.065%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:58.370%;top:5.520%;width:3.600%;height:1.065%;">Cloud</span>
+<span class="text-overlay-word" style="left:62.377%;top:5.520%;width:0.733%;height:1.065%;">|</span>
+<span class="text-overlay-word" style="left:63.517%;top:5.520%;width:5.676%;height:1.065%;">Technical</span>
+<span class="text-overlay-word" style="left:69.600%;top:5.520%;width:7.238%;height:1.065%;">Community</span>
+<span class="text-overlay-word" style="left:77.245%;top:5.520%;width:6.616%;height:1.065%;">Leadership</span>
+<span class="text-overlay-word" style="left:26.458%;top:7.551%;width:11.463%;height:1.097%;">+91-8247793270</span>
+<span class="text-overlay-word" style="left:38.736%;top:7.550%;width:0.418%;height:1.069%;">|</span>
+<a href="https://github.com/shaiksuhail-824" target="_blank" rel="noopener noreferrer" class="text-overlay-link" style="left:39.969%;top:7.551%;width:4.621%;height:1.097%;">GitHub</a>
+<span class="text-overlay-word" style="left:45.404%;top:7.550%;width:0.418%;height:1.069%;">|</span>
+<a href="https://www.linkedin.com/in/shaiksuhail824/" target="_blank" rel="noopener noreferrer" class="text-overlay-link" style="left:46.637%;top:7.551%;width:5.616%;height:1.097%;">LinkedIn</a>
+<span class="text-overlay-word" style="left:53.068%;top:7.550%;width:0.418%;height:1.069%;">|</span>
+<a href="mailto:shaiksuhail74818@gmail.com" class="text-overlay-link" style="left:54.300%;top:7.551%;width:19.241%;height:1.097%;">shaiksuhail74818@gmail.com</a>
+<span class="text-overlay-word" style="left:5.882%;top:12.313%;width:8.009%;height:1.225%;">SUMMARY</span>
+<span class="text-overlay-word" style="left:5.882%;top:15.625%;width:7.067%;height:1.219%;">Computer</span>
+<span class="text-overlay-word" style="left:13.402%;top:15.625%;width:5.336%;height:1.219%;">Science</span>
+<span class="text-overlay-word" style="left:19.190%;top:15.625%;width:10.505%;height:1.219%;">undergraduate</span>
+<span class="text-overlay-word" style="left:30.147%;top:15.625%;width:5.422%;height:1.219%;">focused</span>
+<span class="text-overlay-word" style="left:36.022%;top:15.625%;width:1.802%;height:1.219%;">on</span>
+<span class="text-overlay-word" style="left:38.277%;top:15.625%;width:6.022%;height:1.219%;">machine</span>
+<span class="text-overlay-word" style="left:44.751%;top:15.625%;width:5.862%;height:1.219%;">learning</span>
+<span class="text-overlay-word" style="left:51.066%;top:15.625%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:54.188%;top:15.625%;width:5.447%;height:1.219%;">MLOps,</span>
+<span class="text-overlay-word" style="left:60.087%;top:15.625%;width:5.870%;height:1.219%;">building</span>
+<span class="text-overlay-word" style="left:66.410%;top:15.625%;width:8.981%;height:1.219%;">reproducible</span>
+<span class="text-overlay-word" style="left:75.844%;top:15.625%;width:2.256%;height:1.219%;">ML</span>
+<span class="text-overlay-word" style="left:78.552%;top:15.625%;width:6.339%;height:1.219%;">pipelines</span>
+<span class="text-overlay-word" style="left:85.344%;top:15.625%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:88.466%;top:15.625%;width:5.278%;height:1.219%;">deploy-</span>
+<span class="text-overlay-word" style="left:5.882%;top:17.059%;width:2.232%;height:1.219%;">ing</span>
+<span class="text-overlay-word" style="left:8.567%;top:17.059%;width:8.538%;height:1.219%;">applications</span>
+<span class="text-overlay-word" style="left:17.557%;top:17.059%;width:1.802%;height:1.219%;">on</span>
+<span class="text-overlay-word" style="left:19.812%;top:17.059%;width:3.840%;height:1.219%;">AWS.</span>
+<span class="text-overlay-word" style="left:24.105%;top:17.059%;width:6.844%;height:1.219%;">Hands-on</span>
+<span class="text-overlay-word" style="left:31.401%;top:17.059%;width:7.641%;height:1.219%;">experience</span>
+<span class="text-overlay-word" style="left:39.495%;top:17.059%;width:3.173%;height:1.219%;">with</span>
+<span class="text-overlay-word" style="left:43.120%;top:17.059%;width:4.428%;height:1.219%;">model</span>
+<span class="text-overlay-word" style="left:48.000%;top:17.059%;width:6.056%;height:1.219%;">training,</span>
+<span class="text-overlay-word" style="left:54.509%;top:17.059%;width:8.032%;height:1.219%;">experiment</span>
+<span class="text-overlay-word" style="left:62.993%;top:17.059%;width:6.243%;height:1.219%;">tracking,</span>
+<span class="text-overlay-word" style="left:69.689%;top:17.059%;width:11.996%;height:1.219%;">containerization,</span>
+<span class="text-overlay-word" style="left:82.137%;top:17.059%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:85.259%;top:17.059%;width:3.909%;height:1.219%;">cloud</span>
+<span class="text-overlay-word" style="left:89.620%;top:17.059%;width:2.238%;height:1.219%;">de-</span>
+<span class="text-overlay-word" style="left:5.882%;top:18.493%;width:7.132%;height:1.219%;">ployment,</span>
+<span class="text-overlay-word" style="left:13.467%;top:18.493%;width:6.953%;height:1.219%;">combined</span>
+<span class="text-overlay-word" style="left:20.872%;top:18.493%;width:3.173%;height:1.219%;">with</span>
+<span class="text-overlay-word" style="left:24.497%;top:18.493%;width:6.378%;height:1.219%;">technical</span>
+<span class="text-overlay-word" style="left:31.328%;top:18.493%;width:7.347%;height:1.219%;">leadership</span>
+<span class="text-overlay-word" style="left:39.127%;top:18.493%;width:5.657%;height:1.219%;">through</span>
+<span class="text-overlay-word" style="left:45.236%;top:18.493%;width:2.261%;height:1.219%;">the</span>
+<span class="text-overlay-word" style="left:47.950%;top:18.493%;width:3.388%;height:1.219%;">AWS</span>
+<span class="text-overlay-word" style="left:51.790%;top:18.493%;width:5.562%;height:1.219%;">Student</span>
+<span class="text-overlay-word" style="left:57.805%;top:18.493%;width:5.165%;height:1.219%;">Builder</span>
+<span class="text-overlay-word" style="left:63.423%;top:18.493%;width:4.905%;height:1.219%;">Group,</span>
+<span class="text-overlay-word" style="left:68.780%;top:18.493%;width:4.394%;height:1.219%;">where</span>
+<span class="text-overlay-word" style="left:73.626%;top:18.493%;width:0.527%;height:1.219%;">I</span>
+<span class="text-overlay-word" style="left:74.606%;top:18.493%;width:8.491%;height:1.219%;">coordinated</span>
+<span class="text-overlay-word" style="left:83.550%;top:18.493%;width:7.591%;height:1.219%;">workshops</span>
+<span class="text-overlay-word" style="left:5.882%;top:19.927%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:9.005%;top:19.927%;width:0.825%;height:1.219%;">a</span>
+<span class="text-overlay-word" style="left:10.283%;top:19.927%;width:7.400%;height:1.219%;">hackathon</span>
+<span class="text-overlay-word" style="left:18.135%;top:19.927%;width:2.022%;height:1.219%;">for</span>
+<span class="text-overlay-word" style="left:20.610%;top:19.927%;width:2.261%;height:1.219%;">the</span>
+<span class="text-overlay-word" style="left:23.323%;top:19.927%;width:5.309%;height:1.219%;">student</span>
+<span class="text-overlay-word" style="left:29.084%;top:19.927%;width:6.977%;height:1.219%;">developer</span>
+<span class="text-overlay-word" style="left:36.514%;top:19.927%;width:8.239%;height:1.219%;">community.</span>
+<span class="text-overlay-word" style="left:5.882%;top:21.986%;width:8.939%;height:1.225%;">TECHNICAL</span>
+<span class="text-overlay-word" style="left:15.295%;top:21.986%;width:5.252%;height:1.225%;">SKILLS</span>
+<span class="text-overlay-word" style="left:5.882%;top:25.295%;width:8.576%;height:1.225%;">Languages:</span>
+<span class="text-overlay-word" style="left:15.020%;top:25.298%;width:5.431%;height:1.219%;">Python,</span>
+<span class="text-overlay-word" style="left:20.903%;top:25.298%;width:1.481%;height:1.219%;">C,</span>
+<span class="text-overlay-word" style="left:22.837%;top:25.298%;width:3.178%;height:1.219%;">Java</span>
+<span class="text-overlay-word" style="left:5.882%;top:26.980%;width:6.404%;height:1.225%;">Machine</span>
+<span class="text-overlay-word" style="left:12.760%;top:26.980%;width:6.702%;height:1.225%;">Learning</span>
+<span class="text-overlay-word" style="left:19.936%;top:26.980%;width:1.206%;height:1.225%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:21.616%;top:26.980%;width:4.073%;height:1.225%;">Data:</span>
+<span class="text-overlay-word" style="left:26.250%;top:26.984%;width:8.530%;height:1.219%;">Scikit-learn,</span>
+<span class="text-overlay-word" style="left:35.233%;top:26.984%;width:5.416%;height:1.219%;">Pandas,</span>
+<span class="text-overlay-word" style="left:41.101%;top:26.984%;width:5.408%;height:1.219%;">NumPy,</span>
+<span class="text-overlay-word" style="left:46.962%;top:26.984%;width:7.801%;height:1.219%;">Matplotlib,</span>
+<span class="text-overlay-word" style="left:55.215%;top:26.984%;width:6.284%;height:1.219%;">Seaborn,</span>
+<span class="text-overlay-word" style="left:61.951%;top:26.984%;width:3.528%;height:1.219%;">EDA,</span>
+<span class="text-overlay-word" style="left:65.931%;top:26.984%;width:5.284%;height:1.219%;">Feature</span>
+<span class="text-overlay-word" style="left:71.668%;top:26.984%;width:8.999%;height:1.219%;">Engineering,</span>
+<span class="text-overlay-word" style="left:81.120%;top:26.984%;width:11.631%;height:1.219%;">Hyperparameter</span>
+<span class="text-overlay-word" style="left:5.882%;top:28.418%;width:4.874%;height:1.219%;">Tuning</span>
+<span class="text-overlay-word" style="left:5.882%;top:30.100%;width:5.789%;height:1.225%;">MLOps:</span>
+<span class="text-overlay-word" style="left:12.233%;top:30.104%;width:5.588%;height:1.219%;">MLflow,</span>
+<span class="text-overlay-word" style="left:18.274%;top:30.104%;width:3.585%;height:1.219%;">DVC,</span>
+<span class="text-overlay-word" style="left:22.311%;top:30.104%;width:2.582%;height:1.219%;">Git,</span>
+<a href="https://github.com/shaiksuhail-824" target="_blank" rel="noopener noreferrer" class="text-overlay-link" style="left:25.345%;top:30.104%;width:5.134%;height:1.219%;">GitHub</a>
+<span class="text-overlay-word" style="left:30.932%;top:30.104%;width:5.672%;height:1.219%;">Actions,</span>
+<span class="text-overlay-word" style="left:37.056%;top:30.104%;width:4.918%;height:1.219%;">CI/CD,</span>
+<span class="text-overlay-word" style="left:42.427%;top:30.104%;width:8.170%;height:1.219%;">Experiment</span>
+<span class="text-overlay-word" style="left:51.049%;top:30.104%;width:6.551%;height:1.219%;">Tracking,</span>
+<span class="text-overlay-word" style="left:58.053%;top:30.104%;width:4.465%;height:1.219%;">Model</span>
+<span class="text-overlay-word" style="left:62.970%;top:30.104%;width:1.146%;height:1.219%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:64.569%;top:30.104%;width:5.317%;height:1.219%;">Dataset</span>
+<span class="text-overlay-word" style="left:70.338%;top:30.104%;width:7.433%;height:1.219%;">Versioning</span>
+<span class="text-overlay-word" style="left:5.882%;top:31.785%;width:4.420%;height:1.225%;">Cloud</span>
+<span class="text-overlay-word" style="left:10.776%;top:31.785%;width:1.206%;height:1.225%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:12.456%;top:31.785%;width:6.321%;height:1.225%;">DevOps:</span>
+<span class="text-overlay-word" style="left:19.338%;top:31.789%;width:3.388%;height:1.219%;">AWS</span>
+<span class="text-overlay-word" style="left:23.179%;top:31.789%;width:5.278%;height:1.219%;">(Elastic</span>
+<span class="text-overlay-word" style="left:28.909%;top:31.789%;width:7.306%;height:1.219%;">Beanstalk,</span>
+<span class="text-overlay-word" style="left:36.667%;top:31.789%;width:4.109%;height:1.219%;">IAM),</span>
+<span class="text-overlay-word" style="left:41.228%;top:31.789%;width:5.802%;height:1.219%;">Amazon</span>
+<span class="text-overlay-word" style="left:47.483%;top:31.789%;width:6.222%;height:1.219%;">Bedrock,</span>
+<span class="text-overlay-word" style="left:54.157%;top:31.789%;width:4.149%;height:1.219%;">Azure</span>
+<span class="text-overlay-word" style="left:58.759%;top:31.789%;width:2.834%;height:1.219%;">App</span>
+<span class="text-overlay-word" style="left:62.046%;top:31.789%;width:5.564%;height:1.219%;">Service,</span>
+<span class="text-overlay-word" style="left:68.062%;top:31.789%;width:4.994%;height:1.219%;">Docker</span>
+<span class="text-overlay-word" style="left:5.882%;top:33.471%;width:6.391%;height:1.225%;">Backend</span>
+<span class="text-overlay-word" style="left:12.747%;top:33.471%;width:1.206%;height:1.225%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:14.427%;top:33.471%;width:3.873%;height:1.225%;">APIs:</span>
+<span class="text-overlay-word" style="left:18.861%;top:33.475%;width:5.694%;height:1.219%;">FastAPI,</span>
+<span class="text-overlay-word" style="left:25.008%;top:33.475%;width:4.104%;height:1.219%;">Flask,</span>
+<span class="text-overlay-word" style="left:29.565%;top:33.475%;width:6.526%;height:1.219%;">Streamlit</span>
+<span class="text-overlay-word" style="left:5.882%;top:35.534%;width:9.836%;height:1.225%;">LEADERSHIP</span>
+<span class="text-overlay-word" style="left:16.192%;top:35.534%;width:1.206%;height:1.225%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:17.872%;top:35.534%;width:8.939%;height:1.225%;">TECHNICAL</span>
+<span class="text-overlay-word" style="left:27.284%;top:35.534%;width:10.020%;height:1.225%;">COMMUNITY</span>
+<span class="text-overlay-word" style="left:5.882%;top:38.842%;width:3.456%;height:1.225%;">AWS</span>
+<span class="text-overlay-word" style="left:9.812%;top:38.842%;width:5.875%;height:1.225%;">Student</span>
+<span class="text-overlay-word" style="left:16.161%;top:38.842%;width:5.499%;height:1.225%;">Builder</span>
+<span class="text-overlay-word" style="left:22.133%;top:38.842%;width:4.719%;height:1.225%;">Group</span>
+<span class="text-overlay-word" style="left:27.326%;top:38.842%;width:1.628%;height:1.225%;">—</span>
+<span class="text-overlay-word" style="left:29.428%;top:38.842%;width:5.435%;height:1.225%;">RGUKT</span>
+<span class="text-overlay-word" style="left:35.337%;top:38.842%;width:5.393%;height:1.225%;">Ongole</span>
+<span class="text-overlay-word" style="left:82.450%;top:38.972%;width:5.676%;height:1.065%;">Technical</span>
+<span class="text-overlay-word" style="left:88.534%;top:38.972%;width:5.583%;height:1.065%;">Associate</span>
+<span class="text-overlay-word" style="left:6.713%;top:40.406%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:40.406%;width:8.794%;height:1.219%;">Coordinated</span>
+<span class="text-overlay-word" style="left:17.733%;top:40.406%;width:6.262%;height:1.219%;">planning</span>
+<span class="text-overlay-word" style="left:24.448%;top:40.406%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:27.571%;top:40.406%;width:6.871%;height:1.219%;">execution</span>
+<span class="text-overlay-word" style="left:34.894%;top:40.406%;width:1.400%;height:1.219%;">of</span>
+<span class="text-overlay-word" style="left:36.747%;top:40.406%;width:6.378%;height:1.219%;">technical</span>
+<span class="text-overlay-word" style="left:43.577%;top:40.406%;width:7.591%;height:1.219%;">workshops</span>
+<span class="text-overlay-word" style="left:51.621%;top:40.406%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:54.743%;top:40.406%;width:3.909%;height:1.219%;">cloud</span>
+<span class="text-overlay-word" style="left:59.104%;top:40.406%;width:5.862%;height:1.219%;">learning</span>
+<span class="text-overlay-word" style="left:65.419%;top:40.406%;width:6.114%;height:1.219%;">sessions,</span>
+<span class="text-overlay-word" style="left:71.986%;top:40.406%;width:7.421%;height:1.219%;">promoting</span>
+<span class="text-overlay-word" style="left:79.860%;top:40.406%;width:3.388%;height:1.219%;">AWS</span>
+<span class="text-overlay-word" style="left:83.700%;top:40.406%;width:4.211%;height:1.219%;">Cloud</span>
+<span class="text-overlay-word" style="left:88.364%;top:40.406%;width:3.506%;height:1.219%;">tech-</span>
+<span class="text-overlay-word" style="left:8.487%;top:41.840%;width:5.896%;height:1.219%;">nologies</span>
+<span class="text-overlay-word" style="left:14.836%;top:41.840%;width:4.851%;height:1.219%;">among</span>
+<span class="text-overlay-word" style="left:20.139%;top:41.840%;width:6.412%;height:1.219%;">students.</span>
+<span class="text-overlay-word" style="left:6.713%;top:43.337%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:43.337%;width:9.463%;height:1.219%;">Co-organized</span>
+<span class="text-overlay-word" style="left:18.402%;top:43.337%;width:0.905%;height:1.219%;">2</span>
+<span class="text-overlay-word" style="left:19.760%;top:43.337%;width:6.378%;height:1.219%;">technical</span>
+<span class="text-overlay-word" style="left:26.591%;top:43.337%;width:4.522%;height:1.219%;">events</span>
+<span class="text-overlay-word" style="left:31.565%;top:43.337%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:34.688%;top:43.337%;width:0.905%;height:1.219%;">1</span>
+<span class="text-overlay-word" style="left:36.045%;top:43.337%;width:7.400%;height:1.219%;">hackathon</span>
+<span class="text-overlay-word" style="left:43.898%;top:43.337%;width:3.173%;height:1.219%;">with</span>
+<span class="text-overlay-word" style="left:47.523%;top:43.337%;width:2.261%;height:1.219%;">the</span>
+<span class="text-overlay-word" style="left:50.237%;top:43.337%;width:5.309%;height:1.219%;">student</span>
+<span class="text-overlay-word" style="left:55.998%;top:43.337%;width:5.059%;height:1.219%;">builder</span>
+<span class="text-overlay-word" style="left:61.510%;top:43.337%;width:3.993%;height:1.219%;">team,</span>
+<span class="text-overlay-word" style="left:65.956%;top:43.337%;width:8.729%;height:1.219%;">contributing</span>
+<span class="text-overlay-word" style="left:75.137%;top:43.337%;width:1.421%;height:1.219%;">to</span>
+<span class="text-overlay-word" style="left:77.011%;top:43.337%;width:6.378%;height:1.219%;">technical</span>
+<span class="text-overlay-word" style="left:83.841%;top:43.337%;width:9.030%;height:1.219%;">coordination</span>
+<span class="text-overlay-word" style="left:8.487%;top:44.771%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:11.609%;top:44.771%;width:7.443%;height:1.219%;">on-ground</span>
+<span class="text-overlay-word" style="left:19.504%;top:44.771%;width:7.324%;height:1.219%;">execution.</span>
+<span class="text-overlay-word" style="left:6.713%;top:46.268%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:46.268%;width:9.114%;height:1.219%;">Collaborated</span>
+<span class="text-overlay-word" style="left:18.054%;top:46.268%;width:3.173%;height:1.219%;">with</span>
+<span class="text-overlay-word" style="left:21.679%;top:46.268%;width:3.541%;height:1.219%;">team</span>
+<span class="text-overlay-word" style="left:25.672%;top:46.268%;width:6.494%;height:1.219%;">members</span>
+<span class="text-overlay-word" style="left:32.619%;top:46.268%;width:1.421%;height:1.219%;">to</span>
+<span class="text-overlay-word" style="left:34.492%;top:46.268%;width:7.578%;height:1.219%;">strengthen</span>
+<span class="text-overlay-word" style="left:42.523%;top:46.268%;width:2.261%;height:1.219%;">the</span>
+<span class="text-overlay-word" style="left:45.236%;top:46.268%;width:5.309%;height:1.219%;">student</span>
+<span class="text-overlay-word" style="left:50.997%;top:46.268%;width:5.862%;height:1.219%;">learning</span>
+<span class="text-overlay-word" style="left:57.312%;top:46.268%;width:8.004%;height:1.219%;">community</span>
+<span class="text-overlay-word" style="left:65.769%;top:46.268%;width:5.095%;height:1.219%;">around</span>
+<span class="text-overlay-word" style="left:71.316%;top:46.268%;width:3.909%;height:1.219%;">cloud</span>
+<span class="text-overlay-word" style="left:75.678%;top:46.268%;width:7.575%;height:1.219%;">computing</span>
+<span class="text-overlay-word" style="left:83.705%;top:46.268%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:86.827%;top:46.268%;width:7.275%;height:1.219%;">developed</span>
+<span class="text-overlay-word" style="left:8.487%;top:47.702%;width:6.560%;height:1.219%;">hands-on</span>
+<span class="text-overlay-word" style="left:15.500%;top:47.702%;width:3.388%;height:1.219%;">AWS</span>
+<span class="text-overlay-word" style="left:19.340%;top:47.702%;width:7.768%;height:1.219%;">proficiency</span>
+<span class="text-overlay-word" style="left:27.561%;top:47.702%;width:5.657%;height:1.219%;">through</span>
+<span class="text-overlay-word" style="left:33.670%;top:47.702%;width:4.154%;height:1.219%;">active</span>
+<span class="text-overlay-word" style="left:38.277%;top:47.702%;width:8.691%;height:1.219%;">engagement</span>
+<span class="text-overlay-word" style="left:47.421%;top:47.702%;width:1.380%;height:1.219%;">in</span>
+<span class="text-overlay-word" style="left:49.254%;top:47.702%;width:5.562%;height:1.219%;">Student</span>
+<span class="text-overlay-word" style="left:55.269%;top:47.702%;width:5.165%;height:1.219%;">Builder</span>
+<span class="text-overlay-word" style="left:60.887%;top:47.702%;width:4.452%;height:1.219%;">Group</span>
+<span class="text-overlay-word" style="left:65.791%;top:47.702%;width:7.368%;height:1.219%;">initiatives.</span>
+<span class="text-overlay-word" style="left:5.882%;top:49.761%;width:7.944%;height:1.225%;">PROJECTS</span>
+<span class="text-overlay-word" style="left:5.882%;top:53.069%;width:7.825%;height:1.225%;">Internship</span>
+<span class="text-overlay-word" style="left:14.181%;top:53.069%;width:8.846%;height:1.225%;">Intelligence</span>
+<span class="text-overlay-word" style="left:23.501%;top:53.069%;width:6.551%;height:1.225%;">Platform</span>
+<span class="text-overlay-word" style="left:30.525%;top:53.069%;width:8.522%;height:1.225%;">(Internship</span>
+<span class="text-overlay-word" style="left:39.521%;top:53.069%;width:4.037%;height:1.225%;">Scam</span>
+<span class="text-overlay-word" style="left:44.032%;top:53.069%;width:8.436%;height:1.225%;">Prediction)</span>
+<span class="text-overlay-word" style="left:52.941%;top:53.069%;width:1.628%;height:1.225%;">—</span>
+<span class="text-overlay-word" style="left:55.043%;top:53.069%;width:1.561%;height:1.225%;">In</span>
+<span class="text-overlay-word" style="left:57.077%;top:53.069%;width:6.471%;height:1.225%;">Progress</span>
+<span class="text-overlay-word" style="left:66.977%;top:53.199%;width:4.743%;height:1.065%;">Python,</span>
+<span class="text-overlay-word" style="left:72.126%;top:53.199%;width:2.366%;height:1.065%;">ML,</span>
+<span class="text-overlay-word" style="left:74.900%;top:53.199%;width:4.701%;height:1.065%;">MLOps,</span>
+<span class="text-overlay-word" style="left:80.009%;top:53.199%;width:4.912%;height:1.065%;">MLflow,</span>
+<span class="text-overlay-word" style="left:85.328%;top:53.199%;width:3.336%;height:1.065%;">AWS,</span>
+<span class="text-overlay-word" style="left:89.072%;top:53.199%;width:5.046%;height:1.065%;">Amazon</span>
+<span class="text-overlay-word" style="left:5.882%;top:54.633%;width:5.305%;height:1.065%;">Bedrock,</span>
+<span class="text-overlay-word" style="left:11.595%;top:54.633%;width:5.030%;height:1.065%;">FastAPI,</span>
+<span class="text-overlay-word" style="left:17.032%;top:54.633%;width:4.253%;height:1.065%;">Docker</span>
+<span class="text-overlay-word" style="left:6.713%;top:56.067%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:56.067%;width:5.976%;height:1.219%;">Building</span>
+<span class="text-overlay-word" style="left:14.915%;top:56.067%;width:1.750%;height:1.219%;">an</span>
+<span class="text-overlay-word" style="left:17.118%;top:56.067%;width:2.256%;height:1.219%;">ML</span>
+<span class="text-overlay-word" style="left:19.827%;top:56.067%;width:5.688%;height:1.219%;">pipeline</span>
+<span class="text-overlay-word" style="left:25.967%;top:56.067%;width:1.421%;height:1.219%;">to</span>
+<span class="text-overlay-word" style="left:27.841%;top:56.067%;width:2.619%;height:1.219%;">flag</span>
+<span class="text-overlay-word" style="left:30.913%;top:56.067%;width:7.591%;height:1.219%;">potentially</span>
+<span class="text-overlay-word" style="left:38.956%;top:56.067%;width:7.469%;height:1.219%;">fraudulent</span>
+<span class="text-overlay-word" style="left:46.877%;top:56.067%;width:7.192%;height:1.219%;">internship</span>
+<span class="text-overlay-word" style="left:54.522%;top:56.067%;width:6.305%;height:1.219%;">postings,</span>
+<span class="text-overlay-word" style="left:61.279%;top:56.067%;width:3.809%;height:1.219%;">using</span>
+<span class="text-overlay-word" style="left:65.541%;top:56.067%;width:5.331%;height:1.219%;">MLflow</span>
+<span class="text-overlay-word" style="left:71.325%;top:56.067%;width:2.022%;height:1.219%;">for</span>
+<span class="text-overlay-word" style="left:73.799%;top:56.067%;width:8.032%;height:1.219%;">experiment</span>
+<span class="text-overlay-word" style="left:82.283%;top:56.067%;width:5.790%;height:1.219%;">tracking</span>
+<span class="text-overlay-word" style="left:88.526%;top:56.067%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:91.649%;top:56.067%;width:0.825%;height:1.219%;">a</span>
+<span class="text-overlay-word" style="left:8.487%;top:57.501%;width:8.981%;height:1.219%;">reproducible</span>
+<span class="text-overlay-word" style="left:17.920%;top:57.501%;width:4.994%;height:1.219%;">MLOps</span>
+<span class="text-overlay-word" style="left:23.367%;top:57.501%;width:6.928%;height:1.219%;">workflow.</span>
+<span class="text-overlay-word" style="left:6.713%;top:58.998%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:58.998%;width:7.869%;height:1.219%;">Integrating</span>
+<span class="text-overlay-word" style="left:16.809%;top:58.998%;width:5.802%;height:1.219%;">Amazon</span>
+<span class="text-overlay-word" style="left:23.063%;top:58.998%;width:5.769%;height:1.219%;">Bedrock</span>
+<span class="text-overlay-word" style="left:29.285%;top:58.998%;width:1.421%;height:1.219%;">to</span>
+<span class="text-overlay-word" style="left:31.158%;top:58.998%;width:5.556%;height:1.219%;">develop</span>
+<span class="text-overlay-word" style="left:37.167%;top:58.998%;width:1.750%;height:1.219%;">an</span>
+<span class="text-overlay-word" style="left:39.369%;top:58.998%;width:8.257%;height:1.219%;">AI-powered</span>
+<span class="text-overlay-word" style="left:48.079%;top:58.998%;width:5.312%;height:1.219%;">chatbot</span>
+<span class="text-overlay-word" style="left:53.843%;top:58.998%;width:7.942%;height:1.219%;">component</span>
+<span class="text-overlay-word" style="left:62.238%;top:58.998%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:65.360%;top:58.998%;width:7.754%;height:1.219%;">connecting</span>
+<span class="text-overlay-word" style="left:73.566%;top:58.998%;width:4.428%;height:1.219%;">model</span>
+<span class="text-overlay-word" style="left:78.447%;top:58.998%;width:6.573%;height:1.219%;">inference</span>
+<span class="text-overlay-word" style="left:85.472%;top:58.998%;width:1.421%;height:1.219%;">to</span>
+<span class="text-overlay-word" style="left:87.346%;top:58.998%;width:0.825%;height:1.219%;">a</span>
+<span class="text-overlay-word" style="left:88.624%;top:58.998%;width:5.242%;height:1.219%;">FastAPI</span>
+<span class="text-overlay-word" style="left:8.487%;top:60.432%;width:6.367%;height:1.219%;">backend.</span>
+<span class="text-overlay-word" style="left:6.713%;top:61.929%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:61.929%;width:10.451%;height:1.219%;">Containerizing</span>
+<span class="text-overlay-word" style="left:19.390%;top:61.929%;width:2.261%;height:1.219%;">the</span>
+<span class="text-overlay-word" style="left:22.104%;top:61.929%;width:7.887%;height:1.219%;">application</span>
+<span class="text-overlay-word" style="left:30.444%;top:61.929%;width:3.173%;height:1.219%;">with</span>
+<span class="text-overlay-word" style="left:34.069%;top:61.929%;width:4.994%;height:1.219%;">Docker</span>
+<span class="text-overlay-word" style="left:39.516%;top:61.929%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:42.638%;top:61.929%;width:3.809%;height:1.219%;">using</span>
+<span class="text-overlay-word" style="left:46.900%;top:61.929%;width:3.388%;height:1.219%;">AWS</span>
+<span class="text-overlay-word" style="left:50.740%;top:61.929%;width:5.509%;height:1.219%;">services</span>
+<span class="text-overlay-word" style="left:56.701%;top:61.929%;width:1.421%;height:1.219%;">to</span>
+<span class="text-overlay-word" style="left:58.575%;top:61.929%;width:5.414%;height:1.219%;">support</span>
+<span class="text-overlay-word" style="left:64.442%;top:61.929%;width:7.887%;height:1.219%;">application</span>
+<span class="text-overlay-word" style="left:72.782%;top:61.929%;width:9.710%;height:1.219%;">infrastructure</span>
+<span class="text-overlay-word" style="left:82.944%;top:61.929%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:86.067%;top:61.929%;width:6.928%;height:1.219%;">workflow.</span>
+<span class="text-overlay-word" style="left:5.882%;top:63.736%;width:4.734%;height:1.225%;">House</span>
+<span class="text-overlay-word" style="left:11.090%;top:63.736%;width:3.765%;height:1.225%;">Price</span>
+<span class="text-overlay-word" style="left:15.329%;top:63.736%;width:6.943%;height:1.225%;">Predictor</span>
+<span class="text-overlay-word" style="left:64.282%;top:63.866%;width:4.743%;height:1.065%;">Python,</span>
+<span class="text-overlay-word" style="left:69.432%;top:63.866%;width:3.620%;height:1.065%;">Flask,</span>
+<span class="text-overlay-word" style="left:73.459%;top:63.866%;width:7.512%;height:1.065%;">Scikit-learn,</span>
+<span class="text-overlay-word" style="left:81.378%;top:63.866%;width:3.336%;height:1.065%;">AWS,</span>
+<span class="text-overlay-word" style="left:85.122%;top:63.866%;width:4.294%;height:1.065%;">CI/CD,</span>
+<span class="text-overlay-word" style="left:89.823%;top:63.866%;width:4.294%;height:1.065%;">MLOps</span>
+<span class="text-overlay-word" style="left:6.713%;top:65.300%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:65.300%;width:3.368%;height:1.219%;">Built</span>
+<span class="text-overlay-word" style="left:12.308%;top:65.300%;width:1.750%;height:1.219%;">an</span>
+<span class="text-overlay-word" style="left:14.510%;top:65.300%;width:7.747%;height:1.219%;">end-to-end</span>
+<span class="text-overlay-word" style="left:22.710%;top:65.300%;width:7.254%;height:1.219%;">regression</span>
+<span class="text-overlay-word" style="left:30.416%;top:65.300%;width:5.688%;height:1.219%;">pipeline</span>
+<span class="text-overlay-word" style="left:36.556%;top:65.300%;width:1.380%;height:1.219%;">in</span>
+<span class="text-overlay-word" style="left:38.389%;top:65.300%;width:8.530%;height:1.219%;">Scikit-learn,</span>
+<span class="text-overlay-word" style="left:47.372%;top:65.300%;width:6.116%;height:1.219%;">applying</span>
+<span class="text-overlay-word" style="left:53.941%;top:65.300%;width:9.950%;height:1.219%;">regularization</span>
+<span class="text-overlay-word" style="left:64.343%;top:65.300%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:67.465%;top:65.300%;width:4.140%;height:1.219%;">k-fold</span>
+<span class="text-overlay-word" style="left:72.057%;top:65.300%;width:11.138%;height:1.219%;">cross-validation</span>
+<span class="text-overlay-word" style="left:83.648%;top:65.300%;width:1.421%;height:1.219%;">to</span>
+<span class="text-overlay-word" style="left:85.521%;top:65.300%;width:6.163%;height:1.219%;">optimize</span>
+<span class="text-overlay-word" style="left:8.487%;top:66.734%;width:4.428%;height:1.219%;">model</span>
+<span class="text-overlay-word" style="left:13.367%;top:66.734%;width:8.988%;height:1.219%;">performance</span>
+<span class="text-overlay-word" style="left:22.807%;top:66.734%;width:1.730%;height:1.219%;">(R</span>
+<span class="text-overlay-word" style="left:24.538%;top:66.560%;width:0.634%;height:0.853%;">2</span>
+<span class="text-overlay-word" style="left:25.705%;top:66.733%;width:1.266%;height:1.187%;">≈</span>
+<span class="text-overlay-word" style="left:27.424%;top:66.734%;width:3.168%;height:1.219%;">0.97</span>
+<span class="text-overlay-word" style="left:31.044%;top:66.734%;width:1.802%;height:1.219%;">on</span>
+<span class="text-overlay-word" style="left:33.299%;top:66.734%;width:2.261%;height:1.219%;">the</span>
+<span class="text-overlay-word" style="left:36.013%;top:66.734%;width:7.441%;height:1.219%;">evaluation</span>
+<span class="text-overlay-word" style="left:43.906%;top:66.734%;width:3.126%;height:1.219%;">set).</span>
+<span class="text-overlay-word" style="left:6.713%;top:68.231%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:68.231%;width:2.689%;height:1.219%;">The</span>
+<span class="text-overlay-word" style="left:11.629%;top:68.231%;width:7.887%;height:1.219%;">application</span>
+<span class="text-overlay-word" style="left:19.968%;top:68.231%;width:2.732%;height:1.219%;">was</span>
+<span class="text-overlay-word" style="left:23.152%;top:68.231%;width:6.477%;height:1.219%;">deployed</span>
+<span class="text-overlay-word" style="left:30.082%;top:68.231%;width:1.380%;height:1.219%;">in</span>
+<span class="text-overlay-word" style="left:31.915%;top:68.231%;width:3.388%;height:1.219%;">AWS</span>
+<span class="text-overlay-word" style="left:35.756%;top:68.231%;width:4.599%;height:1.219%;">Elastic</span>
+<span class="text-overlay-word" style="left:40.807%;top:68.231%;width:6.853%;height:1.219%;">Beanstalk</span>
+<span class="text-overlay-word" style="left:48.113%;top:68.231%;width:3.173%;height:1.219%;">with</span>
+<a href="https://github.com/shaiksuhail-824" target="_blank" rel="noopener noreferrer" class="text-overlay-link" style="left:51.738%;top:68.231%;width:5.134%;height:1.219%;">GitHub</a>
+<span class="text-overlay-word" style="left:57.325%;top:68.231%;width:5.219%;height:1.219%;">Actions</span>
+<span class="text-overlay-word" style="left:62.996%;top:68.231%;width:4.918%;height:1.219%;">CI/CD,</span>
+<span class="text-overlay-word" style="left:68.367%;top:68.231%;width:8.094%;height:1.219%;">configuring</span>
+<span class="text-overlay-word" style="left:76.913%;top:68.231%;width:2.977%;height:1.219%;">IAM</span>
+<span class="text-overlay-word" style="left:80.343%;top:68.231%;width:2.022%;height:1.219%;">for</span>
+<span class="text-overlay-word" style="left:82.817%;top:68.231%;width:4.524%;height:1.219%;">secure</span>
+<span class="text-overlay-word" style="left:87.794%;top:68.231%;width:4.832%;height:1.219%;">access.</span>
+<a href="https://github.com/shaiksuhail-824" target="_blank" rel="noopener noreferrer" class="text-overlay-link" style="left:8.487%;top:69.665%;width:5.134%;height:1.219%;">GitHub</a>
+<span class="text-overlay-word" style="left:14.074%;top:69.664%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:5.882%;top:71.472%;width:5.172%;height:1.225%;">Titanic</span>
+<span class="text-overlay-word" style="left:11.528%;top:71.472%;width:6.134%;height:1.225%;">Survival</span>
+<span class="text-overlay-word" style="left:18.135%;top:71.472%;width:6.215%;height:1.225%;">Analysis</span>
+<span class="text-overlay-word" style="left:24.824%;top:71.472%;width:4.558%;height:1.225%;">(EDA)</span>
+<span class="text-overlay-word" style="left:66.228%;top:71.602%;width:4.743%;height:1.065%;">Python,</span>
+<span class="text-overlay-word" style="left:71.378%;top:71.602%;width:4.808%;height:1.065%;">Pandas,</span>
+<span class="text-overlay-word" style="left:76.594%;top:71.602%;width:4.814%;height:1.065%;">NumPy,</span>
+<span class="text-overlay-word" style="left:81.815%;top:71.602%;width:6.842%;height:1.065%;">Matplotlib,</span>
+<span class="text-overlay-word" style="left:89.065%;top:71.602%;width:5.053%;height:1.065%;">Seaborn</span>
+<span class="text-overlay-word" style="left:6.713%;top:73.036%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:73.036%;width:7.351%;height:1.219%;">Performed</span>
+<span class="text-overlay-word" style="left:16.291%;top:73.036%;width:8.148%;height:1.219%;">exploratory</span>
+<span class="text-overlay-word" style="left:24.891%;top:73.036%;width:3.114%;height:1.219%;">data</span>
+<span class="text-overlay-word" style="left:28.458%;top:73.036%;width:5.598%;height:1.219%;">analysis</span>
+<span class="text-overlay-word" style="left:34.509%;top:73.036%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:37.631%;top:73.036%;width:5.038%;height:1.219%;">feature</span>
+<span class="text-overlay-word" style="left:43.122%;top:73.036%;width:8.861%;height:1.219%;">engineering,</span>
+<span class="text-overlay-word" style="left:52.435%;top:73.036%;width:6.445%;height:1.219%;">resolving</span>
+<span class="text-overlay-word" style="left:59.332%;top:73.036%;width:11.711%;height:1.219%;">multicollinearity</span>
+<span class="text-overlay-word" style="left:71.496%;top:73.036%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:74.618%;top:73.036%;width:6.573%;height:1.219%;">skewness</span>
+<span class="text-overlay-word" style="left:81.644%;top:73.036%;width:1.421%;height:1.219%;">to</span>
+<span class="text-overlay-word" style="left:83.517%;top:73.036%;width:5.427%;height:1.219%;">identify</span>
+<span class="text-overlay-word" style="left:89.397%;top:73.036%;width:2.447%;height:1.219%;">key</span>
+<span class="text-overlay-word" style="left:8.487%;top:74.470%;width:5.548%;height:1.219%;">survival</span>
+<span class="text-overlay-word" style="left:14.487%;top:74.470%;width:7.566%;height:1.219%;">predictors.</span>
+<a href="https://github.com/shaiksuhail-824" target="_blank" rel="noopener noreferrer" class="text-overlay-link" style="left:22.615%;top:74.470%;width:5.134%;height:1.219%;">GitHub</a>
+<span class="text-overlay-word" style="left:28.202%;top:74.469%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:5.882%;top:76.278%;width:9.575%;height:1.225%;">Independent</span>
+<span class="text-overlay-word" style="left:15.931%;top:76.278%;width:5.235%;height:1.225%;">MLOps</span>
+<span class="text-overlay-word" style="left:21.640%;top:76.278%;width:6.702%;height:1.225%;">Learning</span>
+<span class="text-overlay-word" style="left:81.833%;top:76.407%;width:12.285%;height:1.065%;">#100DaysOfMLOps</span>
+<span class="text-overlay-word" style="left:6.713%;top:77.841%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:77.841%;width:7.039%;height:1.219%;">Practicing</span>
+<span class="text-overlay-word" style="left:15.978%;top:77.841%;width:7.747%;height:1.219%;">end-to-end</span>
+<span class="text-overlay-word" style="left:24.178%;top:77.841%;width:4.994%;height:1.219%;">MLOps</span>
+<span class="text-overlay-word" style="left:29.625%;top:77.841%;width:3.173%;height:1.219%;">with</span>
+<span class="text-overlay-word" style="left:33.250%;top:77.841%;width:3.132%;height:1.219%;">DVC</span>
+<span class="text-overlay-word" style="left:36.835%;top:77.841%;width:8.626%;height:1.219%;">(multi-stage</span>
+<span class="text-overlay-word" style="left:45.913%;top:77.841%;width:6.791%;height:1.219%;">pipelines,</span>
+<span class="text-overlay-word" style="left:53.158%;top:77.841%;width:10.319%;height:1.219%;">dataset/model</span>
+<span class="text-overlay-word" style="left:63.929%;top:77.841%;width:7.819%;height:1.219%;">versioning,</span>
+<span class="text-overlay-word" style="left:72.200%;top:77.841%;width:10.163%;height:1.219%;">S3-compatible</span>
+<span class="text-overlay-word" style="left:82.816%;top:77.841%;width:6.344%;height:1.219%;">remotes)</span>
+<span class="text-overlay-word" style="left:89.612%;top:77.841%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:8.487%;top:79.275%;width:5.331%;height:1.219%;">MLflow</span>
+<span class="text-overlay-word" style="left:14.271%;top:79.275%;width:8.711%;height:1.219%;">(experiment</span>
+<span class="text-overlay-word" style="left:23.434%;top:79.275%;width:6.469%;height:1.219%;">tracking)</span>
+<span class="text-overlay-word" style="left:30.356%;top:79.275%;width:4.353%;height:1.219%;">across</span>
+<span class="text-overlay-word" style="left:35.161%;top:79.275%;width:2.261%;height:1.219%;">the</span>
+<span class="text-overlay-word" style="left:37.875%;top:79.275%;width:7.190%;height:1.219%;">workflow:</span>
+<span class="text-overlay-word" style="left:45.627%;top:79.275%;width:3.114%;height:1.219%;">data</span>
+<span class="text-overlay-word" style="left:49.194%;top:79.274%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:51.274%;top:79.275%;width:5.688%;height:1.219%;">pipeline</span>
+<span class="text-overlay-word" style="left:57.414%;top:79.274%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:59.495%;top:79.275%;width:5.603%;height:1.219%;">training</span>
+<span class="text-overlay-word" style="left:65.550%;top:79.274%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:67.631%;top:79.275%;width:5.790%;height:1.219%;">tracking</span>
+<span class="text-overlay-word" style="left:73.874%;top:79.274%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:75.954%;top:79.275%;width:7.441%;height:1.219%;">evaluation</span>
+<span class="text-overlay-word" style="left:83.848%;top:79.274%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:85.928%;top:79.275%;width:2.476%;height:1.219%;">API</span>
+<span class="text-overlay-word" style="left:88.857%;top:79.274%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:8.487%;top:80.709%;width:4.994%;height:1.219%;">Docker</span>
+<span class="text-overlay-word" style="left:13.934%;top:80.708%;width:1.628%;height:1.187%;">→</span>
+<span class="text-overlay-word" style="left:16.014%;top:80.709%;width:8.851%;height:1.219%;">deployment.</span>
+<span class="text-overlay-word" style="left:5.882%;top:82.768%;width:9.136%;height:1.225%;">EDUCATION</span>
+<span class="text-overlay-word" style="left:5.882%;top:86.077%;width:3.793%;height:1.225%;">Rajiv</span>
+<span class="text-overlay-word" style="left:10.149%;top:86.077%;width:5.465%;height:1.225%;">Gandhi</span>
+<span class="text-overlay-word" style="left:16.088%;top:86.077%;width:7.648%;height:1.225%;">University</span>
+<span class="text-overlay-word" style="left:24.209%;top:86.077%;width:1.494%;height:1.225%;">of</span>
+<span class="text-overlay-word" style="left:26.177%;top:86.077%;width:8.351%;height:1.225%;">Knowledge</span>
+<span class="text-overlay-word" style="left:35.002%;top:86.077%;width:9.756%;height:1.225%;">Technologies</span>
+<span class="text-overlay-word" style="left:45.231%;top:86.077%;width:7.299%;height:1.225%;">(RGUKT),</span>
+<span class="text-overlay-word" style="left:53.004%;top:86.077%;width:5.393%;height:1.225%;">Ongole</span>
+<span class="text-overlay-word" style="left:85.124%;top:86.206%;width:5.329%;height:1.065%;">Expected</span>
+<span class="text-overlay-word" style="left:90.860%;top:86.206%;width:3.258%;height:1.065%;">2029</span>
+<span class="text-overlay-word" style="left:5.882%;top:87.577%;width:5.146%;height:1.219%;">B.Tech,</span>
+<span class="text-overlay-word" style="left:11.481%;top:87.577%;width:7.067%;height:1.219%;">Computer</span>
+<span class="text-overlay-word" style="left:19.000%;top:87.577%;width:5.336%;height:1.219%;">Science</span>
+<span class="text-overlay-word" style="left:24.789%;top:87.577%;width:2.670%;height:1.219%;">and</span>
+<span class="text-overlay-word" style="left:27.911%;top:87.577%;width:8.546%;height:1.219%;">Engineering</span>
+<span class="text-overlay-word" style="left:37.362%;top:87.576%;width:0.452%;height:1.187%;">|</span>
+<span class="text-overlay-word" style="left:38.720%;top:87.577%;width:4.475%;height:1.219%;">CGPA:</span>
+<span class="text-overlay-word" style="left:43.647%;top:87.577%;width:5.761%;height:1.219%;">8.58/10</span>
+<span class="text-overlay-word" style="left:5.882%;top:89.133%;width:6.521%;height:1.225%;">Relevant</span>
+<span class="text-overlay-word" style="left:12.877%;top:89.133%;width:9.600%;height:1.225%;">Coursework:</span>
+<span class="text-overlay-word" style="left:23.039%;top:89.137%;width:3.322%;height:1.219%;">Data</span>
+<span class="text-overlay-word" style="left:26.814%;top:89.137%;width:7.265%;height:1.219%;">Structures</span>
+<span class="text-overlay-word" style="left:34.531%;top:89.137%;width:1.146%;height:1.219%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:36.130%;top:89.137%;width:8.244%;height:1.219%;">Algorithms,</span>
+<span class="text-overlay-word" style="left:44.826%;top:89.137%;width:6.059%;height:1.219%;">Machine</span>
+<span class="text-overlay-word" style="left:51.338%;top:89.137%;width:6.702%;height:1.219%;">Learning,</span>
+<span class="text-overlay-word" style="left:58.492%;top:89.137%;width:4.473%;height:1.219%;">Linear</span>
+<span class="text-overlay-word" style="left:63.418%;top:89.137%;width:5.927%;height:1.219%;">Algebra,</span>
+<span class="text-overlay-word" style="left:69.798%;top:89.137%;width:7.708%;height:1.219%;">Probability</span>
+<span class="text-overlay-word" style="left:77.958%;top:89.137%;width:1.146%;height:1.219%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:79.557%;top:89.137%;width:6.754%;height:1.219%;">Statistics,</span>
+<span class="text-overlay-word" style="left:86.763%;top:89.137%;width:3.288%;height:1.219%;">OOP</span>
+<span class="text-overlay-word" style="left:5.882%;top:91.196%;width:12.850%;height:1.225%;">CERTIFICATIONS</span>
+<span class="text-overlay-word" style="left:19.207%;top:91.196%;width:1.206%;height:1.225%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:20.886%;top:91.196%;width:12.383%;height:1.225%;">ACHIEVEMENTS</span>
+<span class="text-overlay-word" style="left:6.713%;top:94.508%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:94.508%;width:7.780%;height:1.219%;">Supervised</span>
+<span class="text-overlay-word" style="left:16.719%;top:94.508%;width:6.059%;height:1.219%;">Machine</span>
+<span class="text-overlay-word" style="left:23.231%;top:94.508%;width:6.769%;height:1.219%;">Learning:</span>
+<span class="text-overlay-word" style="left:30.561%;top:94.508%;width:7.623%;height:1.219%;">Regression</span>
+<span class="text-overlay-word" style="left:38.637%;top:94.508%;width:1.146%;height:1.219%;">&amp;amp;</span>
+<span class="text-overlay-word" style="left:40.235%;top:94.508%;width:9.359%;height:1.219%;">Classification</span>
+<span class="text-overlay-word" style="left:50.047%;top:94.508%;width:1.628%;height:1.219%;">—</span>
+<span class="text-overlay-word" style="left:52.127%;top:94.508%;width:11.893%;height:1.219%;">DeepLearning.AI</span>
+<span class="text-overlay-word" style="left:64.473%;top:94.508%;width:0.783%;height:1.219%;">/</span>
+<span class="text-overlay-word" style="left:65.708%;top:94.508%;width:6.352%;height:1.219%;">Coursera</span>
+<span class="text-overlay-word" style="left:6.713%;top:96.005%;width:0.960%;height:1.219%;">•</span>
+<span class="text-overlay-word" style="left:8.487%;top:96.005%;width:3.388%;height:1.219%;">AWS</span>
+<span class="text-overlay-word" style="left:12.327%;top:96.005%;width:5.165%;height:1.219%;">Builder</span>
+<span class="text-overlay-word" style="left:17.945%;top:96.005%;width:4.459%;height:1.219%;">Jacket</span>
+<span class="text-overlay-word" style="left:22.856%;top:96.005%;width:5.206%;height:1.219%;">Winner</span>
+<span class="text-overlay-word" style="left:28.515%;top:96.005%;width:1.628%;height:1.219%;">—</span>
+<span class="text-overlay-word" style="left:30.595%;top:96.005%;width:5.802%;height:1.219%;">Amazon</span>
+<span class="text-overlay-word" style="left:36.849%;top:96.005%;width:3.052%;height:1.219%;">Web</span>
+<span class="text-overlay-word" style="left:40.354%;top:96.005%;width:5.763%;height:1.219%;">Services</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Suhail Shaik. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="assets/resume.pdf" download="Shaik_Suhail_Resume.pdf">Download PDF</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.getElementById('nav-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>
